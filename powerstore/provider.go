@@ -34,7 +34,9 @@ func Provider() *schema.Provider {
 			"powerstore_storage_container": resourceStorageContainer(),
 			"powerstore_protection_policy": resourceProtectionPolicy(),
 		},
-		DataSourcesMap:       map[string]*schema.Resource{},
+		DataSourcesMap: map[string]*schema.Resource{
+			"powerstore_host": dataSourceHost(),
+		},
 		ConfigureContextFunc: providerConfigure,
 	}
 }

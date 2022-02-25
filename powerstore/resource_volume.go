@@ -138,6 +138,10 @@ func resourceVolume() *schema.Resource {
 				Type:     schema.TypeString,
 				Optional: true,
 			},
+			"host_id": &schema.Schema{
+				Type:     schema.TypeString,
+				Optional: true,
+			},
 		},
 	}
 }
@@ -205,6 +209,7 @@ func resourceVolumeCreate(d *schema.ResourceData, meta interface{}) error {
 	vol.ApplianceID = d.Get("appliance_id").(string)
 	vol.Size = d.Get("size").(int)
 	vol.IsReplicationDestination = d.Get("is_replication_destination").(bool)
+	vol.HostID = d.Get("host_id").(string)
 
 	id, err := c.CreateVolume(c, c.HostURL, vol)
 	if err != nil {

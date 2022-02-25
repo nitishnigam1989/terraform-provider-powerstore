@@ -1,7 +1,7 @@
 package powerstore
 
 var (
-	host     = "https://10.10.10.10"
+	username = "Username"
 	password = "Password"
-	username = "UserName"
+	host     = "https://<HOST_URL>"
 )

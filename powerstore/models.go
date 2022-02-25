@@ -35,6 +35,7 @@ type Volume struct {
 	TypeL10N                 string               `json:"type_l10n,omitempty"`
 	StateL10N                string               `json:"state_l10n,omitempty"`
 	NodeAffinityL10N         string               `json:"node_affinity_l10n,omitempty"`
+	HostID                   string               `json:"host_id,omitempty"`
 }
 
 // ProtectionDataStruct - part of volume properties
@@ -80,6 +81,7 @@ type VolRequest struct {
 	IsReplicationDestination bool   `json:"is_replication_destination,omitempty"`
 	ApplianceID              string `json:"appliance_id,omitempty"`
 	Size                     int    `json:"size,omitempty"`
+	HostID                   string `json:"host_id,omitempty"`
 }
 
 //ProtectionPolicy - Protection Policy resource
@@ -123,6 +125,17 @@ type VirtualMachine struct {
 }
 
 type VolumeGroup struct {
+	ID   string `json:"id,omitempty"`
+	Name string `json:"name,omitempty"`
+}
+
+/* type HostItem struct {
+	ID   string `json:"id,omitempty"`
+	Name string `json:"name,omitempty"`
+}
+*/
+
+type HostItem struct {
 	ID   string `json:"id,omitempty"`
 	Name string `json:"name,omitempty"`
 }
